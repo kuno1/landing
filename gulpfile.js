@@ -31,9 +31,9 @@ var srcDir = {
 };
 // Destination directory
 var destDir = {
-    scss: './public/assets/css',
-    js: './public/assets/js',
-    img: './public/assets/img'
+    scss: './docs/assets/css',
+    js: './docs/assets/js',
+    img: './docs/assets/img'
 };
 
 // Sass
