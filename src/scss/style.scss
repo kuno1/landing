@@ -1,0 +1,59 @@
+$bg: #d0b3c8;
+$key-color: #EA64A0;
+$gray: #3E3A39;
+
+body{
+  font-family: YuGothic, maryo, sans-serif;
+
+}
+
+section{
+  padding: 80px 0;
+  position: relative;
+  &.header-section{
+    background: $bg;
+  }
+  .icon{
+    position: absolute;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    top: 100px;
+    right: 50%;
+  }
+  h1 img{
+    max-width: 700px;
+    width: auto;
+    height: auto;
+  }
+  .lead{
+    color: $gray;
+    text-align: center;
+  }
+}
+
+.coming{
+  background: $gray;
+  color: #fff;
+}
+
+.features{
+  h3{
+    font-size: 20px;
+    font-weight: bold;
+
+  }
+}
+
+footer{
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background: $bg;
+  p{
+    margin: 0;
+    font-size: 14px;
+    font-family: "Courier New", monospace;
+  }
+}
+
