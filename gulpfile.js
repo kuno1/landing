@@ -2,7 +2,8 @@ var gulp        = require('gulp'),
     fs          = require('fs'),
     $           = require('gulp-load-plugins')(),
     pngquant    = require('imagemin-pngquant'),
-    eventStream = require('event-stream');
+    eventStream = require('event-stream'),
+    browserSync = require('browser-sync').create();
 
 // Include Path for Scss
 var includesPaths = [
@@ -112,9 +113,29 @@ gulp.task('watch', function () {
   gulp.watch(srcDir.img, ['imagemin']);
 });
 
+// Browser Sync
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./docs"
+        }
+    });
+});
+
+//
+gulp.task('reload', function() {
+    return gulp.watch([
+        './docs/**/*'
+    ]).on('change', browserSync.reload);
+});
+
+
 // Build
 gulp.task('build', ['copylib', 'js', 'sass', 'imagemin']);
 
 // Default Tasks
 gulp.task('default', ['watch']);
+
+// Serve
+gulp.task('serve', ['browser-sync', 'watch', 'reload']);
 

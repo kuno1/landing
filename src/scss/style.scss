@@ -2,58 +2,141 @@ $bg: #d0b3c8;
 $key-color: #EA64A0;
 $gray: #3E3A39;
 
-body{
+body {
   font-family: YuGothic, maryo, sans-serif;
 
 }
 
-section{
+section {
   padding: 80px 0;
   position: relative;
-  &.header-section{
+  &.header-section {
     background: $bg;
   }
-  .icon{
-    position: absolute;
-    max-width: 200px;
-    width: auto;
-    height: auto;
-    top: 100px;
-    right: 50%;
-  }
-  h1 img{
+
+  h1 img {
     max-width: 700px;
     width: auto;
     height: auto;
   }
-  .lead{
+  .lead {
     color: $gray;
     text-align: center;
   }
 }
 
-.coming{
+.coming {
   background: $gray;
   color: #fff;
+  overflow: hidden;
+  .container{
+    position: relative;
+    z-index: 1;
+  }
+
+  .icon {
+    position: absolute;
+    z-index: 2;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    top: 100px;
+    right: 100%;
+  }
+
+  h2{
+    margin-bottom: 20px;
+    font-family: "BenchNine", sans-serif;
+    font-size: 60px;
+  }
+
+  &-date{
+    margin-bottom: 60px;
+  }
+
+  form{
+    padding: 40px 0;
+    .btn-primary{
+      background-color: $key-color;
+      border-color: darken( $key-color, 10 );
+      cursor: pointer;
+    }
+  }
+
+  h3{
+    color: #aaa;
+    font-weight: bold;
+  }
+
+  &-note{
+    color: #ccc;
+  }
+
+
 }
 
-.features{
-  h3{
+.features {
+
+  &-title {
+
+    margin: 0 0 60px;
+    text-align: center;
+    color: #888;
+  }
+
+  &-item {
+    position: relative;
+    margin-bottom: 60px;
+  }
+  h3 {
     font-size: 20px;
     font-weight: bold;
 
   }
+  &-content {
+    padding-left: 100px;
+    p {
+      color: #888;
+      text-align: justify;
+      text-justify: inter-ideograph;
+    }
+  }
+  .fa {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+  }
+  @each $var in (
+    server silver,
+    phone #E4B9D6,
+    plug #5D4820,
+    paint-brush #C15488
+  ) {
+    $class_name: nth($var, 1);
+    $color: nth($var, 2);
+    .fa-#{$class_name}{
+      color: $color;
+      & + div h3:first-letter{
+        color: $color;
+        font-weight: bold;
+      }
+    }
+
+  }
 }
 
-footer{
+footer {
   text-align: center;
   padding: 20px;
   color: #fff;
   background: $bg;
-  p{
+  p {
     margin: 0;
     font-size: 14px;
     font-family: "Courier New", monospace;
   }
 }
 
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
