@@ -71,35 +71,38 @@ section {
 .features {
 
   &-title {
-
     margin: 0 0 60px;
     text-align: center;
     color: #888;
   }
 
+  .lead{
+    margin: 0 0 60px;
+    strong{
+      font-weight: bold;
+    }
+  }
+
   &-item {
     position: relative;
     margin-bottom: 60px;
+    text-align: center;
   }
   h3 {
     font-size: 20px;
     font-weight: bold;
-
   }
   &-content {
-    padding-left: 100px;
     p {
+      text-align: left;
       color: #888;
       text-align: justify;
       text-justify: inter-ideograph;
     }
   }
   .fa {
-    position: absolute;
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
     font-size: 60px;
+    margin-bottom: 10px;
   }
   @each $var in (
     server silver,
